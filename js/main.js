@@ -13,3 +13,6 @@ $(document).keypress(function(e) {
         $( "#control-panel-searchButton" ).click(); // Act like when searchButton is clicked
     }
 });
+
+var data = new data();
+var tempgraph = new tempgraph();

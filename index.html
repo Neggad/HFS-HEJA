@@ -20,6 +20,7 @@
         <!--modules css-->
         <link rel="stylesheet" href="css/pc.css">
         <link rel="stylesheet" href="css/sp.css">
+        <link rel="stylesheet" href="css/tempgraph.css">
 
         <link rel="stylesheet" href="css/pictures.css">
 
@@ -38,7 +39,9 @@
                         <div class="row">
                             <!--Searchfield-->
                             <div class="col-xs-8 col-xs-push-2" style="padding:0;">
-                                <input type="text" class="form-control" id="searchField" placeholder="Stad, badplats....">
+                                <div class="ui-widget">
+                                  <input type="text" class="form-control" id="searchField" placeholder="Stad, badplats....">
+                                </div>
                             </div>
                             <!-- GPS Button-->
                             <div class="col-xs-1 col-xs-push-2" style="padding:0;">
@@ -59,65 +62,65 @@
             </div>
 
             <!-- MapView-->
-            <div id="mapView" class="container" style="margin:0; padding:0; width:100%;">
+            <div id="mapView1" class="container" style="margin:0; padding:0; width:100%;">
                 <!-- Help to find control-panel-->
-                <div id="control-panel-help">
-                    <!-- The Control-panel -->
-                    <div id="control-panel" style="padding:0;">
-                        <!-- Legend-->
-                        <div class="col-xs-12" style="padding:0;text-align:center; font-size:20px; font-weight:bold; margin-top:30px; margin-bottom:20px;">
-                            Sök på badplats
-                        </div>
-
-                        <!-- Serachfield-->
-                        <div class="col-xs-12">
-                            <input id="control-panel-searchField" type="text" class="form-control" id="control-panel-searchField" placeholder="Stad, badplats....">
-                        </div>
-
-                        <!-- SearchButton-->
-                        <div class="col-xs-12" style="text-align:right; margin-top:10px;">
-                            <button id="cp" type="button" class="btn btn-default btn-sm">Sök</button>
-                        </div>
-
-                        <!-- Legend of toplist-->
-                        <div class="col-xs-12" style="text-align:center; font-size:30px; font-weight:bold; margin-top:10vh; margin-bottom:40px;">
-                            Toplista
-                        </div>
-
-                        <!-- Table with the toplist-->
-                        <div class="col-xs-12" style="height:50vh; overflow:auto;">
-                            <table id="control-panel-table" class="table table-hover" style="overflow:auto; cursor: pointer;">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Namn</th>
-                                        <th>Avstånd</th>
-                                        <th>Betyg</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Hannes bad</td>
-                                        <td>3,4km</td>
-                                        <td>4/5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Hannes bad</td>
-                                        <td>3,4km</td>
-                                        <td>4/5</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-xs-12">Här kan det stå något</div>
-
+                <div id="control-panel-help"></div>
+                <!-- The Control-panel -->
+                <div id="control-panel" style="padding:0;">
+                    <!-- Legend-->
+                    <div class="col-xs-12" style="padding:0;text-align:center; font-size:20px; font-weight:bold; margin-top:30px; margin-bottom:20px;">
+                        Sök på badplats
                     </div>
+
+                    <!-- Serachfield-->
+                    <div class="col-xs-12">
+                        <input id="control-panel-searchField" type="text" class="form-control" id="control-panel-searchField" placeholder="Stad, badplats....">
+                    </div>
+
+                    <!-- SearchButton-->
+                    <div class="col-xs-12" style="text-align:right; margin-top:10px;">
+                        <button id="cp" type="button" class="btn btn-default btn-sm">Sök</button>
+                    </div>
+
+                    <!-- Legend of toplist-->
+                    <div class="col-xs-12" style="text-align:center; font-size:30px; font-weight:bold; margin-top:10vh; margin-bottom:40px;">
+                        Toplista
+                    </div>
+
+                    <!-- Table with the toplist-->
+                    <div class="col-xs-12" style="height:50vh; overflow:auto;">
+                        <table id="control-panel-table" class="table table-hover" style="overflow:auto; cursor: pointer;">
+                            <!-- Hur det kan se ut i tabelN-->
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Namn</th>
+                                    <th>Avstånd</th>
+                                    <th>Betyg</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Hannes bad</td>
+                                    <td>3,4km</td>
+                                    <td>4/5</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Hannes bad</td>
+                                    <td>3,4km</td>
+                                    <td>4/5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-12">Här kan det stå något</div>
+
                 </div>
             </div>
             <!--The Map-->
-            <div id="mapView" class="col-xs-12 google-maps" style="height:100vh">
+            <div id="mapView" class="google-maps" style="height:100vh">
                 <iframe
                   width="600"
                   height="450"
@@ -126,13 +129,83 @@
                 </iframe>
             </div>
 
+            <!-- Popup info -->
+            <div id="popupInfo" style="position:fixed; bottom:10vh; top:10vh; left:60vw; width:36vw; background-color:white; opacity:0.8;">
+                <!-- content-->
+                <div class="col-xs-12" >
+                    <div class="row">
+                        <!-- Name-->
+                        <div class="col-xs-8" style="font-size:30px; line-height: 120%; font-weight:bold; height:10vh;">
+                            Hannes bad, bablabla
+                        </div>
+                        <!-- Long/lat-->
+                        <div class="col-xs-4" style="padding-top:15px;text-align:center; font-size:20px; line-height: 100%; font-weight:bold; height:10vh;">
+                            58.489699, 16.941558
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Graph and weather-->
+                    <div class="row">
+                        <!-- Graph-->
+                        <div class="col-xs-8 borderZ" style="height:15vh;"></div>
+                        <!-- Weather-->
+                        <div class="col-xs-4 borderZ" style="height:15vh;"></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <!-- Reviews-->
+                        <div class="col-xs-6" style="border-right:solid; border-width:2px; height:40vh;">
+                            <table class="col-xs-12 table">
+                                <thead>
+                                    <tr>
+                                        <td>Super nöjd ...</td>
+                                        <td>6/9 - 2014</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">Super nöjd här. Trevligt folk och superbra strand, städat! Rek +++++</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Write own review-->
+                        <div class="col-xs-6 " style="height:40vh; padding-top:10vh;">
+                            <div class="col-xs-12 " style="text-align:center; height:20px; font-size:12px; font-weight:bold;">
+                                Skriv din egna review
+                            </div>
+                            <div class="col-xs-12 " style="">
+                                <textarea class="form-control" rows="6"></textarea>
+                            </div>
+                            <div class="col-xs-12 " style="text-align:right;">
+                                0/160
+                            </div>
+                            <div class="col-xs-12 " style="text-align:right; height:10vh;">
+                                <button id="" type="button" class="btn btn-success btn-xs" style="">
+                                    Lägg till review
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align:center;">
+                            <button id="" type="button" class="btn btn-success" style="">
+                                Ta mig till denna underbara plats
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <!--End of Wrap-->
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/10.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         <!-- D3.js-->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -144,9 +217,15 @@
         <!-- loading data -->
         <script src="js/data.js"></script>
 
-        <script src="js/tempgraph.js"></script>
         <!-- js for the whole application -->
         <script src="js/main.js"></script>
+
+        <!-- js for temperature graph -->
+        <script src="js/tempgraph.js"></script>
+
+        <!-- js for the map stuff -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script> 
+        <script src="js/mapPos.js"></script>
 
         <!--js for firstView-->
         <script src="js/firstPage.js"></script>

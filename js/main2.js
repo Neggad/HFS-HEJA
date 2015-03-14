@@ -1,0 +1,1 @@
+var tempgraph = new tempgraph();
