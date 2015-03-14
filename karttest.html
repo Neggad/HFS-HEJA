@@ -3,33 +3,53 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/colorbrewer.css">
-        <link rel="stylesheet" href="css/map.css">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/colorbrewer.css">
+    <link rel="stylesheet" href="css/map.css">
 
-        <!--modules css-->
-        <link rel="stylesheet" href="css/pc.css">
-        <link rel="stylesheet" href="css/sp.css">
 
-    </head>
-    <body>
-        <div class="google-maps">
-            <iframe
-              width="600"
-              height="450"
-              frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAn9KwCrTCj0FlkM2HM8BBHABHDe8tt5pQ&q=Norrkoping">
-            </iframe>
-        </div>
-    </body>
+    <!--modules css-->
+    <link rel="stylesheet" href="css/pc.css">
+    <link rel="stylesheet" href="css/sp.css">
+
+    <script src ="js/vendor/d3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script> 
+    <script src="js/mapPos.js"></script>
+    <!-- distance matrix -->
+
+   
+</head>
+
+<body>
+    <div class="google-maps" id="badkarta">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAn9KwCrTCj0FlkM2HM8BBHABHDe8tt5pQ&q=Norrkoping">
+        </iframe>
+    </div>
+
+    <div id="content-pane">
+          <div id="inputs">
+            <pre>
+                var origin1 = new google.maps.LatLng(58.58774, 16.19242);
+                var destinationA = 'lindobadet ';
+                var destinationB = 'agelsjon';
+            </pre>
+            <p><button type="button" onclick="calculateDistances();">Calculate
+              distances</button></p>
+          </div>
+          <div id="outputDiv"></div>
+    </div>
+</body> 
 </html>
