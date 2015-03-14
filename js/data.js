@@ -34,7 +34,29 @@ function data() {
 		}
 	}
 
-	// input: k = kommun
+	// input: bp = Badplats;
+	// retrun: array with [date, temp];
+	this.getTempsOfBath = function(bp) {
+		console.log("IN FUNCTION getAllBaths");
+		console.log("Data in getTempsOfBath: ", data);
+		console.log("bp: ", bp);
+
+		var output = [];
+		for(i in data) {
+
+			console.log("data[i][Badplats]", data[i]["Badplats"]);
+
+			if(data[i]["Badplats"] == bp) {
+				console.log("IN IF");
+
+				output.push([data[i]["Provtid"], data[i]["Vattentemp"]]);
+			}
+		}
+		console.log("output: ", output);
+		return output;
+	}
+
+	// input: k = Kommun
 	// return: array with names of all baths 
 	this.getAllBaths = function(k) {
 		//console.log("IN FUNCTION getAllBaths");
