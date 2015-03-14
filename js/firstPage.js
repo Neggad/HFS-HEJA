@@ -19,3 +19,34 @@ $( "#searchButton" ).click(function() {
 $( "#gpsButton" ).click(function() {
   console.log("GPS Clicked");
 });
+
+// Autocomplete searchfunction
+$(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#searchField" ).autocomplete({
+      source: availableTags
+    });
+  });
