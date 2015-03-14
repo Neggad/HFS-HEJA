@@ -1,5 +1,3 @@
-test = new data();
-
 function data() {
 	//console.log("IN FUNCTION data()");
 
@@ -12,11 +10,11 @@ function data() {
 
 		createBathIDs();
 
-		var temp = test.getAllBaths("Ale");
 	});
 
 	function createBathIDs() {
-
+		//console.log("IN FUNCTION createBathIDs()");
+		
 		var bpID = 1;
 		var bp = data[0]["Badplats"];
 		
@@ -39,8 +37,9 @@ function data() {
 	// input: k = kommun
 	// return: array with names of all baths 
 	this.getAllBaths = function(k) {
-		var output = [];
+		//console.log("IN FUNCTION getAllBaths");
 
+		var output = [];
 		var bpID = 0;
 		for(i in data) {
 
@@ -51,7 +50,6 @@ function data() {
 					output.push(data[i]["Badplats"]);
 					bpID = data[i]["BadplatsID"];
 				}
-				
 			}
 		}
 
