@@ -3,6 +3,9 @@ $( "#searchButton" ).click(function() {
   console.log("Serach Clicked");
   console.log("INput: "+ $("#searchField").val());
 
+  var test = data.getTempsOfBath("Hultasjön");
+  console.log("TEST: ", test);
+
   var result = $("#searchField").val();
 
   if(result == "") {

@@ -1,0 +1,88 @@
+Kommun,Badplats,Provtid,Kvalitet,Siktdjup,Vattentemp,Lat,Long,ID
+Ale,Hultasjön,2014-06-03,  1,  3.8,  17,0,0,1
+Ale,Hultasjön,2014-06-16,  1,  4.85,  19,0,0,2
+Ale,Hultasjön,2014-07-01,  1,  4,  16,0,0,3
+Ale,Hultasjön,2014-07-15,  1,  4.2,  20,0,0,4
+Ale,Hultasjön,2014-07-28,  1,  4.9,  22,0,0,5
+Ale,Hultasjön,2014-08-11,  1,  4.75,  21,0,0,6
+Ale,Hålsjön,2014-06-03,  3,  0.5,  18,0,0,7
+Ale,Hålsjön,2014-06-16,  1,  0.5,  20,0,0,8
+Ale,Hålsjön,2014-07-01,  1,  0.5,  16,0,0,9
+Ale,Hålsjön,2014-07-15,  1,  0.4,  20,0,0,10
+Ale,Hålsjön,2014-07-28,  1,  0.5,  22,0,0,11
+Ale,Hålsjön,2014-08-11,  2,  0.2,  20,0,0,12
+Kävlinge,Barsebäcks saltsjöbad,2014-07-29,  1,,  24,0,0,3179
+Kävlinge,Barsebäcks saltsjöbad,2014-08-12,  1,,  20.1,0,0,3180
+Kävlinge,Barsebäckshamn,2014-06-03,  1,,  16,0,0,3181
+Kävlinge,Barsebäckshamn,2014-06-12,  1,,  18.5,0,0,3182
+Kävlinge,Barsebäckshamn,2014-07-08,  1,,  19.5,0,0,3183
+Kävlinge,Barsebäckshamn,2014-07-29,  1,,  23,0,0,3184
+Kävlinge,Barsebäckshamn,2014-08-12,  1,,  19.6,0,0,3185
+Kävlinge,Vikhögs hamn,2014-06-03,  1,,  15,0,0,3186
+Kävlinge,Vikhögs hamn,2014-06-12,  2,,  17,0,0,3187
+Kävlinge,Vikhögs hamn,2014-07-08,  1,,  18.6,0,0,3188
+Köping,Kolsva kommunalbad,2014-06-10,  1,,  18,0,0,3189
+Köping,Kolsva kommunalbad,2014-07-01,  2,,  16,0,0,3190
+Köping,Kolsva kommunalbad,2014-07-08,  2,,  22.5,0,0,3191
+Köping,Kolsva kommunalbad,2014-07-22,  1,,  22,0,0,3192
+Köping,Kolsva kommunalbad,2014-08-12,  2,,  20.7,0,0,3193
+Köping,Kolsva kommunalbad,2014-08-26,  1,,  16.3,0,0,3194
+Köping,Malmön,2014-06-10,  2,  0.6,  18.8,0,0,3195
+Köping,Malmön,2014-06-17,  1,  0.5,  17.4,0,0,3196
+Köping,Malmön,2014-07-01,  3,  0.5,  17,0,0,3197
+Köping,Malmön,2014-07-08,  1,  0.4,  22,0,0,3198
+Köping,Malmön,2014-07-09,  1,  0.4,  21.5,0,0,3199
+Köping,Malmön,2014-07-10,  1,  0.45,  24,0,0,3200
+Köping,Malmön,2014-07-22,  1,  0.55,  23,0,0,3201
+Köping,Malmön,2014-08-12,  1,,  20,0,0,3202
+Säffle,Mellan Svan. Strand,2014-06-17,  1,,  19,0,0,6067
+Säffle,Mellan Svan. Strand,2014-07-15,  1,,  21.8,0,0,6068
+Säffle,Mellan Svan. Strand,2014-08-04,  1,,  22.9,0,0,6069
+Säffle,Sjönsjö. Södra Ed,2014-06-17,  1,,  19,0,0,6070
+Säffle,Sjönsjö. Södra Ed,2014-07-15,  1,,  22,0,0,6071
+Säffle,Sjönsjö. Södra Ed,2014-08-04,  2,,  23.8,0,0,6072
+Säffle,Värmlands Nysäter,2014-06-17,  1,,  19,0,0,6073
+Säffle,Värmlands Nysäter,2014-07-15,  1,,  21.7,0,0,6074
+Säffle,Värmlands Nysäter,2014-08-04,  1,,  24.5,0,0,6075
+Säter,Hyen,2014-06-18,  1,,  17.1,0,0,6076
+Säter,Hyen,2014-07-16,  1,,  21,0,0,6077
+Säter,Hyen,2014-08-13,  1,,  20.6,0,0,6078
+Säter,Lilla Ulvsjön. Ulfshyttan,2014-06-18,  1,,  17.1,0,0,6079
+Säter,Lilla Ulvsjön. Ulfshyttan,2014-07-16,  1,,  20.8,0,0,6080
+Säter,Lilla Ulvsjön. Ulfshyttan,2014-08-13,  1,,  20.4,0,0,6081
+Säter,Ljusternbadet,2014-06-18,  1,,  16,0,0,6082
+Säter,Ljusternbadet,2014-07-16,  1,,  21.3,0,0,6083
+Säter,Ljusternbadet,2014-08-13,  1,,  20.1,0,0,6084
+Säter,Skönvik,2014-06-18,  1,,  16.3,0,0,6085
+Säter,Skönvik,2014-07-16,  1,,  20.9,0,0,6086
+Säter,Skönvik,2014-08-13,  1,,  20,0,0,6087
+Säter,Solvarbo. Dammsjön,2014-06-18,  1,,  17.3,0,0,6088
+Säter,Solvarbo. Dammsjön,2014-07-16,  1,,  21.5,0,0,6089
+Säter,Solvarbo. Dammsjön,2014-08-13,  1,,  19.4,0,0,6090
+Säter,Övre Klingen,2014-06-18,  1,,  16.5,0,0,6091
+Säter,Övre Klingen,2014-07-16,  1,,  20.9,0,0,6092
+Säter,Övre Klingen,2014-08-13,  1,,  20.7,0,0,6093
+Sävsjö,Eksjöhofgårdssjön. nya badet,2014-06-03,  1,  0.5,  17,0,0,6094
+Sävsjö,Eksjöhofgårdssjön. nya badet,2014-06-24,  1,,  17,0,0,6095
+Sävsjö,Eksjöhofgårdssjön. nya badet,2014-07-22,  1,,  22,0,0,6096
+Sävsjö,Grunnen,2014-06-03,  1,  0.6,  17,0,0,6097
+Sävsjö,Grunnen,2014-06-24,  1,,  17,0,0,6098
+Sävsjö,Grunnen,2014-07-22,  1,,  21,0,0,6099
+Sävsjö,Mosjön,2014-06-03,  1,  0.6,  18,0,0,6100
+Sävsjö,Mosjön,2014-06-24,  2,,  17,0,0,6101
+Sävsjö,Mosjön,2014-07-01,  1,,  16,0,0,6102
+Sävsjö,Mosjön,2014-07-22,  1,,  22,0,0,6103
+Sävsjö,Norrsjön,2014-06-03,  1,  0.5,  17,0,0,6104
+Sävsjö,Norrsjön,2014-06-24,  1,,  16,0,0,6105
+Sävsjö,Norrsjön,2014-07-22,  1,  0.4,  22,0,0,6106
+Sävsjö,Skärsjön,2014-06-03,  1,,  17,0,0,6107
+Sävsjö,Skärsjön,2014-06-24,  1,,  17,0,0,6108
+Sävsjö,Skärsjön,2014-07-22,  1,,  22,0,0,6109
+Sävsjö,Slättsjön,2014-06-03,  1,  0.6,  18,0,0,6110
+Sävsjö,Slättsjön,2014-06-24,  1,,  16,0,0,6111
+Sävsjö,Slättsjön,2014-07-22,  1,,  22,0,0,6112
+Sävsjö,Svinasjön,2014-06-03,  1,  0.6,  17,0,0,6113
+Sävsjö,Svinasjön,2014-06-24,  1,,  16,0,0,6114
+Sävsjö,Svinasjön,2014-07-22,  1,,  22,0,0,6115
+Sävsjö,Sävsjön,2014-06-03,  1,  0.3,  17,0,0,6116
+Sävsjö,Sävsjön,2014-06-24,  1,,  16,0,0,6117
