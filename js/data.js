@@ -37,22 +37,17 @@ function data() {
 	// input: bp = Badplats;
 	// retrun: array with [date, temp];
 	this.getTempsOfBath = function(bp) {
-		console.log("IN FUNCTION getAllBaths");
-		console.log("Data in getTempsOfBath: ", data);
-		console.log("bp: ", bp);
+		//console.log("IN FUNCTION getAllBaths");
 
 		var output = [];
 		for(i in data) {
 
-			console.log("data[i][Badplats]", data[i]["Badplats"]);
-
 			if(data[i]["Badplats"] == bp) {
-				console.log("IN IF");
 
 				output.push([data[i]["Provtid"], data[i]["Vattentemp"]]);
 			}
 		}
-		console.log("output: ", output);
+
 		return output;
 	}
 
@@ -76,6 +71,19 @@ function data() {
 		}
 
 		return output;
+	}
+
+	//return: {key = Badplats, value = [Lat, Long]}
+	this.getAllNames = function() {
+		//console.log("IN FUNCTION getAllNames");
+
+		names = {};
+		for(i in data) {
+
+			names[data[i]["Badplats"]] = [data[i]["Lat"], data[i]["Long"]];
+		}
+
+		return names;
 	}
 }
 
