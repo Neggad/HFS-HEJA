@@ -8,3 +8,5 @@
 # XML data files (for security reasons)
 *.xml
 *.json
+
+*.csv
