@@ -37,7 +37,7 @@ function data() {
 	// input: bp = Badplats;
 	// retrun: array with [date, temp];
 	this.getTempsOfBath = function(bp) {
-		console.log("IN FUNCTION getAllBaths");
+		//console.log("IN FUNCTION getAllBaths");
 
 		var output = [];
 		for(i in data) {
@@ -71,6 +71,19 @@ function data() {
 		}
 
 		return output;
+	}
+
+	//return: {key = Badplats, value = [Lat, Long]}
+	this.getAllNames = function() {
+		//console.log("IN FUNCTION getAllNames");
+
+		names = {};
+		for(i in data) {
+
+			names[data[i]["Badplats"]] = [data[i]["Lat"], data[i]["Long"]];
+		}
+
+		return names;
 	}
 }
 
