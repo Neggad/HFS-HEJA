@@ -1,14 +1,10 @@
-
 var map;
-var geocoder;
-var bounds = new google.maps.LatLngBounds();
+var marker;
 var markersArray = [];
 var badplatsArray = [];
+var badplatsDest = [];
 
-var origin1 = new google.maps.LatLng(58.58774, 16.19242);
-
-var destinationA = new google.maps.LatLng(58.6083, 16.2602);
-var destinationB = new google.maps.LatLng(58.6760, 16.1188);
+var origin1 = 'Norrkoping';
 
 var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
 var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000';
@@ -17,20 +13,18 @@ var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=
 d3.csv("data/LongLat_test.csv",function (csv) {
       //Add each badplats to badplats array
       csv.forEach(function(d){
+          badplatsDest.push(new google.maps.LatLng(d.Latitud, d.Longitud));
           badplatsArray.push(d);
       });
-      //addMarker()
   });
-  console.log(badplatsArray);
-
-
+ 
 function initialize() {
   var opts = {
-    center: new google.maps.LatLng(55.53, 9.4),
+    center: new google.maps.LatLng(58.58774, 16.19242),
     zoom: 10
   };
   map = new google.maps.Map(document.getElementById('badkarta'), opts);
-  geocoder = new google.maps.Geocoder();
+  calculateDistances();
 }
 
 function calculateDistances() {
@@ -38,7 +32,7 @@ function calculateDistances() {
   service.getDistanceMatrix(
     {
       origins: [origin1],
-      destinations: [destinationA, destinationB],
+      destinations: badplatsDest,
       travelMode: google.maps.TravelMode.DRIVING,
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
@@ -56,43 +50,23 @@ function callback(response, status) {
     outputDiv.innerHTML = '';
     deleteOverlays();
 
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      addMarker(origins[i], false);
-      for (var j = 0; j < results.length; j++) {
-        addMarker(destinations[j], true);
-        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
-            + ': ' + results[j].distance.text + ' in '
-            + results[j].duration.text + '<br>';
-      }
+    //Origin marker
+    marker = new google.maps.Marker({
+            position: new google.maps.LatLng(58.58774, 16.19242),
+            map: map,
+            icon: originIcon
+    });
+
+    //Destination markers
+    for (j = 0; j < badplatsArray.length; j++) { 
+
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(badplatsArray[j].Latitud, badplatsArray[j].Longitud),
+        map: map,
+        icon: destinationIcon
+      });
     }            
   }
-}
-
-function addMarker(location, isDestination) {
-  var icon;
-  if (isDestination) {
-    console.log("destination");
-    icon = destinationIcon;
-  } else {
-    console.log("origin");
-    icon = originIcon;
-  }
-  geocoder.geocode({'address': location}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      bounds.extend(results[0].geometry.location);
-      map.fitBounds(bounds);
-      var marker = new google.maps.Marker({
-        position: results[0].geometry.location,
-        map: map,
-        icon: icon
-      });
-      markersArray.push(marker);
-    } else {
-      alert('Geocode was not successful for the following reason: '
-        + status);
-    }
-  });
 }
 
 function deleteOverlays() {
