@@ -1,20 +1,21 @@
-data = new data();
+test = new data();
 
 function data() {
+	//console.log("IN FUNCTION data()");
 
-	//var file = "data/testdata.csv"; //data/baddata.csv";
-	var jsonFile = "data/jaharra.json";
+	//var file = "data/testdata.csv";
+	var file = "data/baddata.csv";
 	var data;
 
-	d3.csv(file, function(data) {
-		this.data = data;
+	d3.csv(file, function(d) {
+		data = d;
 
-		createBathIDs(this.data);
+		createBathIDs();
 
-		console.log(this.data);
+		var temp = test.getAllBaths("Ale");
 	});
 
-	function createBathIDs(data) {
+	function createBathIDs() {
 
 		var bpID = 1;
 		var bp = data[0]["Badplats"];
@@ -36,19 +37,25 @@ function data() {
 	}
 
 	// input: k = kommun
-	// input: array[]
+	// return: array with names of all baths 
 	this.getAllBaths = function(k) {
 		var output = [];
 
+		var bpID = 0;
 		for(i in data) {
 
 			if(data[i]["Kommun"] == k) {
 
-				output.push(data[i]["Badplats"]);
+				if(bpID != data[i]["BadplatsID"]) {
+
+					output.push(data[i]["Badplats"]);
+					bpID = data[i]["BadplatsID"];
+				}
+				
 			}
 		}
 
-		console.log("getAllBaths", output);
+		return output;
 	}
 }
 
