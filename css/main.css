@@ -124,6 +124,47 @@ body {
     border-radius: 10px;
 }
 
+#control-panel-help {
+    width: 10px;
+    position: fixed;
+    left: 0px;
+    bottom: 40%;
+    top: 40%;
+    background-color: #1F1F1F;
+    color: #9E9595;
+    padding-right: 40px;
+    z-index: 10;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#control-panel {
+    width: 250px;
+    position: fixed;
+    left: -250px;
+    bottom: 0px;
+    top: 0px;
+    background-color: #1F1F1F;
+    color: #9E9595;
+    padding-right: 40px;
+    z-index: 10;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+#control-panel-help:hover {
+    left:250px;
+}
+#control-panel-help:hover > #control-panel{
+    left: 0px;
+}
+
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */

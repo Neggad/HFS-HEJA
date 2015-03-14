@@ -1,15 +1,7 @@
-/*!
- * Start Bootstrap - Full HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-
 /* Image for background */
 body {
 	margin: 0;
-	background: url('/image/cats.jpg');
+	background: url('../image/cats.jpg');
 	background-repeat:no-repeat;
 	display: compact;
 	font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;

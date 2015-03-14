@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/colorbrewer.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/list.css">
+        <link rel="stylesheet" href="css/map.css">
         
         <!--modules css-->
         <link rel="stylesheet" href="css/pc.css">
@@ -29,7 +29,7 @@
         <!-- Wrap all page content here -->
         <div id="wrap">
             <!-- Startpage - serachfield -->
-            <div id="" class="container" style="padding: 0px;">
+            <div id="startView" class="container" style="padding: 0px;">
                 <br/><br/><br/>
                 <div class="row">
                     <div class="col-xs-2" style="margin-top:40vh;"></div>
@@ -42,7 +42,7 @@
                             </div>
                             <!-- GPS Button-->
                             <div class="col-xs-1 col-xs-push-2" style="padding:0;">
-                                <img id="gpsButton" src="/image/gps_position.png" class="img-responsive" style="height:35px;">
+                                <img id="gpsButton" src="../image/gps_position.png" class="img-responsive" style="height:35px;">
                             </div>
                         </div>
 
@@ -56,24 +56,77 @@
                     </div>
                     <div class="col-xs-2" style="margin-top:40vh;"></div>
                 </div>
-                <div class="row">
-                    <iframe
-                      width="600"
-                      height="450"
-                      frameborder="0" style="border:0"
-                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAn9KwCrTCj0FlkM2HM8BBHABHDe8tt5pQ&q=Norrkoping">
-                    </iframe>
+            </div>
+
+            <!-- MapView-->
+            <div id="mapView" class="container" style="margin:0; padding:0; width:100%;">
+                <!-- Help to find control-panel-->
+                <div id="control-panel-help">
+                    <!-- The Control-panel -->
+                    <div id="control-panel" style="padding:0;">
+                        <!-- Legend-->
+                        <div class="col-xs-12" style="padding:0;text-align:center; font-size:20px; font-weight:bold; margin-top:30px; margin-bottom:20px;">
+                            Sök på badplats
+                        </div>
+
+                        <!-- Serachfield-->
+                        <div class="col-xs-12">
+                            <input id="control-panel-searchField" type="text" class="form-control" id="control-panel-searchField" placeholder="Stad, badplats....">
+                        </div>
+
+                        <!-- SearchButton-->
+                        <div class="col-xs-12" style="text-align:right; margin-top:10px;">
+                            <button id="cp" type="button" class="btn btn-default btn-sm">Sök</button>
+                        </div>
+
+                        <!-- Legend of toplist-->
+                        <div class="col-xs-12" style="text-align:center; font-size:30px; font-weight:bold; margin-top:10vh; margin-bottom:40px;">
+                            Toplista
+                        </div>
+
+                        <!-- Table with the toplist-->
+                        <div class="col-xs-12" style="height:50vh; overflow:auto;">
+                            <table id="control-panel-table" class="table table-hover" style="overflow:auto; cursor: pointer;">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Namn</th>
+                                        <th>Avstånd</th>
+                                        <th>Betyg</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Hannes bad</td>
+                                        <td>3,4km</td>
+                                        <td>4/5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Hannes bad</td>
+                                        <td>3,4km</td>
+                                        <td>4/5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12">Här kan det stå något</div>
+
+                    </div>
                 </div>
+            </div>
+            <!--The Map-->
+            <div id="mapView" class="col-xs-12 google-maps" style="height:100vh">
+                <iframe
+                  width="600"
+                  height="450"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAn9KwCrTCj0FlkM2HM8BBHABHDe8tt5pQ&q=Norrkoping">
+                </iframe>
             </div>
 
         <!--End of Wrap-->
-        </div>
-
-        <!-- Footer with info about us-->
-        <div id="footer">
-            <div class="container">
-                HEJA TEAM
-            </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -88,8 +141,14 @@
         <script src="js/vendor/underscore-min.js"></script>
         <script src="js/vendor/colorbrewer.js"></script>
 
-        <!--js for first page-->
+        <!-- js for the whole application -->
+        <script src="js/main.js"></script>
+
+        <!--js for firstView-->
         <script src="js/firstPage.js"></script>
+
+        <!--js for control-panel-->
+        <script src="js/controlPanel.js"></script>
 
     </body>
 </html>
