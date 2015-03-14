@@ -23,7 +23,7 @@ function initialize() {
     center: new google.maps.LatLng(58.58774, 16.19242),
     zoom: 10
   };
-  map = new google.maps.Map(document.getElementById('badkarta'), opts);
+  map = new google.maps.Map(document.getElementById('mapView'), opts);
   calculateDistances();
 }
 
