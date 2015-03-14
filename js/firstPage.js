@@ -12,13 +12,6 @@ $( "#searchButton" ).click(function() {
   }
 });
 
-// When click on enter
-$(document).keypress(function(e) {
-    if(e.which == 13) {
-        $( "#searchButton" ).click(); // Act like when serachButton is clicked
-    }
-});
-
 // When click on gps button
 $( "#gpsButton" ).click(function() {
   console.log("GPS Clicked");
