@@ -3,8 +3,6 @@ $( "#searchButton" ).click(function() {
   console.log("Serach Clicked");
   console.log("INput: "+ $("#searchField").val());
 
-  console.log(data.getAllNames());
-
   var result = $("#searchField").val();
 
   if(result == "") {
