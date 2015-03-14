@@ -3,7 +3,7 @@ $( "#searchButton" ).click(function() {
   console.log("Serach Clicked");
   console.log("INput: "+ $("#searchField").val());
 
-  var test = data.getTempsOfBath("Hultasjön");
+  var test = data.getAllNames();
   console.log("TEST: ", test);
 
   var result = $("#searchField").val();
