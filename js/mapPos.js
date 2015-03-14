@@ -46,8 +46,8 @@ function callback(response, status) {
   } else {
     var origins = response.originAddresses;
     var destinations = response.destinationAddresses;
-    var outputDiv = document.getElementById('outputDiv');
-    outputDiv.innerHTML = '';
+    /*var outputDiv = document.getElementById('outputDiv');
+    outputDiv.innerHTML = '';*/
     deleteOverlays();
 
     //Origin marker
@@ -59,7 +59,6 @@ function callback(response, status) {
 
     //Destination markers
     for (j = 0; j < badplatsArray.length; j++) { 
-
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(badplatsArray[j].Latitud, badplatsArray[j].Longitud),
         map: map,
