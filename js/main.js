@@ -2,8 +2,6 @@
 $(document).ready(function() {
   document.getElementById("startView").style.display = "inherit";
   document.getElementById("mapView").style.display = "none";
-
-
 });
 
 // When click on enter
@@ -16,5 +14,5 @@ $(document).keypress(function(e) {
     }
 });
 
-data = new data();
+var data = new data();
 
