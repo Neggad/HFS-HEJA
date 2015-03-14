@@ -5,6 +5,9 @@ $( "#searchButton" ).click(function() {
 
   var result = $("#searchField").val();
 
+  var a = data.getAllNames();
+  console.log(a);
+
   if(result == "") {
   	$("#searchField").attr("placeholder", "Sök på något råå");
   } else {
