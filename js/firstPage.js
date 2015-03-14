@@ -4,11 +4,11 @@ $( "#searchButton" ).click(function() {
   console.log("INput: "+ $("#searchField").val());
 
   var result = $("#searchField").val();
+  var names = data.getAllNames();
+  console.log("EYah: " + names[result]);
 
-  var a = data.getAllNames();
-  console.log(a);
 
-  if(result == "") {
+  if(result == "" || names[result] == undefined) {
   	$("#searchField").attr("placeholder", "Sök på något råå");
   } else {
   	console.log("Till kartan");
@@ -20,33 +20,10 @@ $( "#gpsButton" ).click(function() {
   console.log("GPS Clicked");
 });
 
-// Autocomplete searchfunction
-$(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#searchField" ).autocomplete({
-      source: availableTags
-    });
+// Fix autocomplete
+$('#searchField').on('input', function() {
+  var names = data.getAllNames();
+  $( "#searchField" ).autocomplete({
+    source: Object.keys(names)
   });
+});
