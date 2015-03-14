@@ -1,0 +1,10 @@
+
+# OS specific
+.DS_Store
+
+# Mergecrap files
+*.orig
+
+# XML data files (for security reasons)
+*.xml
+*.json
