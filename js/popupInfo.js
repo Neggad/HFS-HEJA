@@ -7,7 +7,7 @@ function popupInfo() {
 		temperatureData = [];
 
 		document.getElementById("temp_graph").innerHTML = "";
-		var htmlString = "//opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/"+lat+"/lon/"+lon+"/data.json";
+		var htmlString = "//opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/"+lat.toFixed(2)+"/lon/"+lon.toFixed(2)+"/data.json";
 
 		d3.json(htmlString, function(data) {
 			for(var i = 0; i < 24; i++) {
