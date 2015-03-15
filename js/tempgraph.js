@@ -64,7 +64,7 @@ function tempgraph(){
         .attr("x", width/2 )
         .attr("y",  margin.top+height+10 )
         .style("text-anchor", "middle")
-        .text("24 timmar framöver ->");
+        .text("Väderprognos 24 timmar");
     
       // Add the X Axis
       svg.append("g")
