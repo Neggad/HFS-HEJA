@@ -14,5 +14,6 @@ $(document).keypress(function(e) {
     }
 });
 
+var popupInfo = new popupInfo();
 var data = new data();
 
