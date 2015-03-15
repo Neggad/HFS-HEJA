@@ -82,14 +82,15 @@ function callback(response, status) {
     //Destination markers
     for (j = 0; j < badplatsArray.length; j++) {
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(badplatsArray[j].Lat, badplatsArray[j].Long),
+        position: new google.maps.LatLng(badplatsArray[j].Lat,badplatsArray[j].Long),
         map: map,
         icon: destinationIcon
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-          popupInfo.updateWeather(badplatsArray[j]["Lat"]["Long"]);
+          console.log("long:" + badplatsArray[j]["Long"])
+          popupInfo.updateWeather(parseFloat(badplatsArray[j]["Lat"]), parseFloat(badplatsArray[j]["Long"]));
           document.getElementById("popupInfo").style.display = "inherit";
           document.getElementById("badTitel").innerHTML = badplatsArray[j]["Badplats"];
           document.getElementById("water_temp").innerHTML = badplatsArray[j]["Vattentemp"] + "°";

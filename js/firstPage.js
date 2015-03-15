@@ -15,6 +15,7 @@ $( "#searchButton" ).click(function() {
   } else {
   	console.log("Till kartan");
       theMap(names[result]);
+      document.getElementById("badTitel").innerHTML = result;
       document.getElementById("startView").style.display = "none";
       document.getElementById("mapView").style.display = "inherit";
       document.getElementById("mapView1").style.display = "inherit";
