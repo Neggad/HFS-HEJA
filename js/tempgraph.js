@@ -34,7 +34,7 @@ function tempgraph(){
 
   var swimplace = [];
   var weatherData = popupInfo.getTemperatureData();
-  console.log("hej", weatherData)
+  //console.log("hej", weatherData)
   draw(weatherData);
   // Get the data
 /*  d3.csv("data/baddata.csv", function(error, data) {

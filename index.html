@@ -141,8 +141,7 @@
                             
                         </div>
                         <!-- Long/lat-->
-                        <div class="col-xs-4" style="padding-top:15px;text-align:center; font-size:20px; line-height: 100%; font-weight:bold; height:10vh;">
-                            58.489699, 16.941558
+                        <div id="water_temp" class="col-xs-4" style="padding-top:15px;text-align:center; font-size:20px; line-height: 100%; font-weight:bold; height:10vh;">
                         </div>
                     </div>
                     <hr>
@@ -235,11 +234,5 @@
         <!-- js for the whole application -->
         <script src="js/main.js"></script>
 
-
-        <script> 
-            var temp = data.getTempsOfBath("Lillsjön"); 
-
-            document.getElementById("water_temp").innerHTML = "<div style='font-size:20px; text-align: center; vertical-align: middle;' >18° </div>";
-        </script>
     </body>
 </html>

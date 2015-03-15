@@ -15,12 +15,20 @@ function theMap(latlong) {
   var y = latlong[1];
 
 //load longlat data
-d3.csv("data/LongLat_test.csv",function (csv) {
+//d3.csv("data/LongLat_test.csv",function (csv) {
+d3.csv("data/nrkp.csv",function (csv) {
+  //För att undvika att det blir > 25 anrop (vilket leder till alertbox med error)
+  var prevname = "";
       //Add each badplats to badplats array
       csv.forEach(function(d){
-          badplatsDest.push(new google.maps.LatLng(d.Latitud, d.Longitud));
-          badplatsArray.push(d);
+        badplatsArray.push(d);
+
+        if(prevname != d.Badplats)
+          badplatsDest.push(new google.maps.LatLng(d.Lat, d.Long));
+        
+        prevname = d.Badplats;
       });
+      //console.log("BADPLATSARRAY", badplatsArray)
   });
 
 
@@ -61,30 +69,30 @@ function callback(response, status) {
     for (var i = 0; i < origins.length; i++) {
       var results = response.rows[i].elements;
       //avstånd till alla mål från origo
-      console.log(results[i].distance.text);
+      //console.log(results[i].distance.text);
     }
 
     //Origin marker
     marker = new google.maps.Marker({
-            position: new google.maps.LatLng(x, y),
-            map: map,
-            icon: originIcon
+      position: new google.maps.LatLng(x, y),
+      map: map,
+      icon: originIcon
     });
 
     //Destination markers
-    for (j = 0; j < badplatsArray.length; j++) { 
+    for (j = 0; j < badplatsArray.length; j++) {
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(badplatsArray[j].Latitud, badplatsArray[j].Longitud),
+        position: new google.maps.LatLng(badplatsArray[j].Lat, badplatsArray[j].Long),
         map: map,
         icon: destinationIcon
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-          console.log(badplatsArray[j]["Badplats"]);
-          popupInfo.updateWeather(badplatsArray[j]["Latitud"]["Longitud"]);
+          popupInfo.updateWeather(badplatsArray[j]["Lat"]["Long"]);
           document.getElementById("popupInfo").style.display = "inherit";
           document.getElementById("badTitel").innerHTML = badplatsArray[j]["Badplats"];
+          document.getElementById("water_temp").innerHTML = badplatsArray[j]["Vattentemp"] + "°";
         }
       })(marker, j));
 
