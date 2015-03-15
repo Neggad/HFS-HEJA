@@ -20,6 +20,7 @@
         <!--modules css-->
         <link rel="stylesheet" href="css/pc.css">
         <link rel="stylesheet" href="css/sp.css">
+        <link rel="stylesheet" href="css/tempgraph.css">
 
         <link rel="stylesheet" href="css/pictures.css">
 
@@ -129,7 +130,7 @@
             </div>
 
             <!-- Popup info -->
-            <div id="popupInfo" style="position:fixed; bottom:10vh; top:10vh; left:60vw; width:36vw; background-color:white; opacity:0.8; display:none;">
+            <div id="popupInfo" style="position:fixed; bottom:10vh; top:10vh; left:60vw; width:36vw; background-color:white; opacity:0.8;">
                 <!-- content-->
                 <div class="col-xs-12" >
                     <div class="row">
@@ -146,7 +147,7 @@
                     <!-- Graph and weather-->
                     <div class="row">
                         <!-- Graph-->
-                        <div class="col-xs-8 borderZ" style="height:15vh;"></div>
+                        <div class="col-xs-8 borderZ" id="temp_graph" style="height:15vh;"></div>
                         <!-- Weather-->
                         <div class="col-xs-4 borderZ" style="height:15vh;"></div>
                     </div>
@@ -201,7 +202,7 @@
         <!--End of Wrap-->
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/10.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -213,7 +214,11 @@
         <script src="js/vendor/underscore-min.js"></script>
         <script src="js/vendor/colorbrewer.js"></script>
 
+        <!-- loading data -->
         <script src="js/data.js"></script>
+
+        <!-- js for temperature graph -->
+        <script src="js/tempgraph.js"></script>
 
         <!-- js for the map stuff -->
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script> 
