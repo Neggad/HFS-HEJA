@@ -2,7 +2,8 @@ function data() {
 	//console.log("IN FUNCTION data()");
 
 	//var file = "data/testdata.csv";
-	var file = "data/baddata.csv";
+	//var file = "data/baddata.csv";
+	var file = "data/nrkp.csv";
 	var data;
 
 	d3.csv(file, function(d) {
@@ -84,6 +85,22 @@ console.log("yo", data)
 		}
 
 		return names;
+	}
+
+	this.getLatLongOfAllBaths = function() {
+
+		var output = [];
+		var temp; 
+		for(i in data) {
+
+			if(temp != data[i]["Badplats"]) {
+				output.push([data[i]["Lat"], data[i]["Long"]]);
+				temp = data[i]["Badplats"];
+			}
+		}
+
+		console.log("Output from getLatLongOfAllBaths(): ", output);
+		return output;
 	}
 }
 

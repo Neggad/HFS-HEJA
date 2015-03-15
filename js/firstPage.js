@@ -14,7 +14,9 @@ $( "#searchButton" ).click(function() {
   	$("#searchField").attr("placeholder", "Sök på något råå");
   } else {
   	console.log("Till kartan");
-    
+      theMap(names[result]);
+      document.getElementById("startView").style.display = "none";
+  document.getElementById("mapView").style.display = "inherit";
   }
 });
 
