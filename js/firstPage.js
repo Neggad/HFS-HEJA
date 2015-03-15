@@ -26,6 +26,11 @@ $( "#gpsButton" ).click(function() {
   console.log("GPS Clicked");
 });
 
+// When click on gps button
+$( "#closeButton" ).click(function() {
+  document.getElementById("popupInfo").style.display = "none";
+});
+
 // Fix autocomplete
 $('#searchField').on('input', function() {
   var names = data.getAllNames();
