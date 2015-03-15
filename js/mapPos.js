@@ -9,7 +9,7 @@ var origin1 = 'Norrköping';
 var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
 var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000';
 
-function theMap(latlong) {
+function theMap(latlong, zoom) {
 
   var x = latlong[0];
   var y = latlong[1];
@@ -38,7 +38,7 @@ initialize();
 function initialize() {
   var opts = {
     center: new google.maps.LatLng(x, y),
-    zoom: 15
+    zoom: zoom
   };
   map = new google.maps.Map(document.getElementById('mapView'), opts);
   calculateDistances();
