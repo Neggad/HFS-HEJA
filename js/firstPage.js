@@ -33,7 +33,8 @@ $( "#gpsButton" ).click(function() {
 });
 
 // When click on gps button
-$( "#closeButton" ).click(function() {
+$( "#close" ).click(function() {
+  console.log("stänger ")
   document.getElementById("popupInfo").style.display = "none";
 });
 
