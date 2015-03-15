@@ -9,7 +9,7 @@ var origin1 = 'Norrköping';
 var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
 var originIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000';
 
-function theMap(latlong) {
+function theMap(latlong, zoom) {
 
   var x = latlong[0];
   var y = latlong[1];
@@ -38,7 +38,7 @@ initialize();
 function initialize() {
   var opts = {
     center: new google.maps.LatLng(x, y),
-    zoom: 15
+    zoom: zoom
   };
   map = new google.maps.Map(document.getElementById('mapView'), opts);
   calculateDistances();
@@ -82,14 +82,15 @@ function callback(response, status) {
     //Destination markers
     for (j = 0; j < badplatsArray.length; j++) {
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(badplatsArray[j].Lat, badplatsArray[j].Long),
+        position: new google.maps.LatLng(badplatsArray[j].Lat,badplatsArray[j].Long),
         map: map,
         icon: destinationIcon
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-          popupInfo.updateWeather(badplatsArray[j]["Lat"]["Long"]);
+          console.log("long:" + badplatsArray[j]["Long"])
+          popupInfo.updateWeather(parseFloat(badplatsArray[j]["Lat"]), parseFloat(badplatsArray[j]["Long"]));
           document.getElementById("popupInfo").style.display = "inherit";
           document.getElementById("badTitel").innerHTML = badplatsArray[j]["Badplats"];
           document.getElementById("water_temp").innerHTML = badplatsArray[j]["Vattentemp"] + "°";

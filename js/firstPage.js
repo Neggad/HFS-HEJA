@@ -1,6 +1,5 @@
 // When click the serach button
 $( "#searchButton" ).click(function() {
-
   var result = $("#searchField").val();
   var names = data.getAllNames();
 
@@ -14,7 +13,8 @@ $( "#searchButton" ).click(function() {
   	$("#searchField").attr("placeholder", "Sök på något råå");
   } else {
   	console.log("Till kartan");
-      theMap(names[result]);
+      document.getElementById("badTitel").innerHTML = result;
+      theMap(names[result], 15);
       document.getElementById("startView").style.display = "none";
       document.getElementById("mapView").style.display = "inherit";
       document.getElementById("mapView1").style.display = "inherit";
@@ -25,6 +25,11 @@ $( "#searchButton" ).click(function() {
 // When click on gps button
 $( "#gpsButton" ).click(function() {
   console.log("GPS Clicked");
+  theMap([58.58, 16.19], 10);
+  document.getElementById("startView").style.display = "none";
+  document.getElementById("mapView").style.display = "inherit";
+  document.getElementById("mapView1").style.display = "inherit";
+  document.getElementById("popupInfo").style.display = "none";
 });
 
 // When click on gps button
