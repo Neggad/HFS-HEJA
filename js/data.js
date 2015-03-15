@@ -2,7 +2,7 @@ function data() {
 	//console.log("IN FUNCTION data()");
 
 	//var file = "data/testdata.csv";
-	var file = "data/baddata.csv";
+	var file = "data/nrkp.csv";
 	var data;
 
 	d3.csv(file, function(d) {
@@ -37,7 +37,7 @@ function data() {
 		}
 
 	}
-	
+
 	function createBathIDs() {
 		//console.log("IN FUNCTION createBathIDs()");
 		

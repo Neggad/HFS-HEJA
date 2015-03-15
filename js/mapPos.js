@@ -17,6 +17,12 @@ d3.csv("data/LongLat_test.csv",function (csv) {
           badplatsArray.push(d);
       });
   });
+
+/*badplatsArray = data.getLatLongName("Norrköping");
+
+badplatsArray.forEach(function(bp){
+  badplatsDest.push(new google.maps.LatLng(bp.Latitud, bp.Longitud));
+});*/
  
 function initialize() {
   var opts = {
@@ -49,6 +55,12 @@ function callback(response, status) {
     /*var outputDiv = document.getElementById('outputDiv');
     outputDiv.innerHTML = '';*/
     deleteOverlays();
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+      //avstånd till alla mål från origo
+      console.log(results[i].distance.text);
+    }
 
     //Origin marker
     marker = new google.maps.Marker({
