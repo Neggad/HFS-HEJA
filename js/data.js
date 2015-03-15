@@ -38,7 +38,7 @@ function data() {
 	// retrun: array with [date, temp];
 	this.getTempsOfBath = function(bp) {
 		//console.log("IN FUNCTION getAllBaths");
-
+console.log("yo", data)
 		var output = [];
 		for(i in data) {
 
