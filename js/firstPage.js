@@ -15,6 +15,7 @@ $( "#searchButton" ).click(function() {
   	console.log("Till kartan");
       theMap(names[result], 15);
       document.getElementById("badTitel").innerHTML = result;
+      document.getElementById("water_temp").innerHTML = "18.5°";
       document.getElementById("startView").style.display = "none";
       document.getElementById("mapView").style.display = "inherit";
       document.getElementById("mapView1").style.display = "inherit";
