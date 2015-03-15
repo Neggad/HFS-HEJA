@@ -1,17 +1,20 @@
 // When click the serach button
 $( "#searchButton" ).click(function() {
-  console.log("Serach Clicked");
-  console.log("INput: "+ $("#searchField").val());
 
   var result = $("#searchField").val();
   var names = data.getAllNames();
-  console.log("EYah: " + names[result]);
+
+  console.log("Res: "+ result);
+  console.log("Lat: "+ names[result][0]);
+  console.log("Long: "+ names[result][1]);
+  popupInfo.updateWeather(parseFloat(names[result][0]), parseFloat(names[result][1]));
 
 
   if(result == "" || names[result] == undefined) {
   	$("#searchField").attr("placeholder", "Sök på något råå");
   } else {
   	console.log("Till kartan");
+    
   }
 });
 
