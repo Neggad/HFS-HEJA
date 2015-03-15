@@ -1,7 +1,7 @@
 /* Image for background */
 body {
 	margin: 0;
-	background: url('../image/cats.jpg');
+	background: url('../image/bakgrund.png');
 	background-repeat:no-repeat;
 	display: compact;
 	font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;

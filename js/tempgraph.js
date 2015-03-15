@@ -32,9 +32,9 @@ function tempgraph(){
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var swimplace = [];
+  svg.selectAll("*").remove();
   var weatherData = popupInfo.getTemperatureData();
-  //console.log("hej", weatherData)
+
   draw(weatherData);
   // Get the data
 /*  d3.csv("data/baddata.csv", function(error, data) {
@@ -62,9 +62,9 @@ function tempgraph(){
     
     svg.append("text")      // text label for the x axis
         .attr("x", width/2 )
-        .attr("y",  margin.top+height )
+        .attr("y",  margin.top+height+10 )
         .style("text-anchor", "middle")
-        .text("Tidsaxel...");
+        .text("24 timmar framöver ->");
     
       // Add the X Axis
       svg.append("g")

@@ -4,6 +4,10 @@ function popupInfo() {
 	var temperatureData = [];
 
 	this.updateWeather = function(lat, lon) {
+		temperatureData = [];
+
+		document.getElementById("temp_graph").innerHTML = "";
+
 		d3.json("//opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint/lat/"+lat+"/lon/"+lon+"/data.json", function(data) {
 			for(var i = 0; i < 24; i++) {
 			//for(var i = 0; i < data.timeseries.length; i++) {
