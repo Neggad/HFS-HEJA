@@ -17,7 +17,7 @@ function tempgraph(){
       .orient("bottom").ticks(2);
 
   var yAxis = d3.svg.axis().scale(y)
-      .orient("left").ticks(7);
+      .orient("left").ticks(4);
 
   // Define the line
   var valueline = d3.svg.line()
@@ -52,7 +52,7 @@ function tempgraph(){
   function draw(swimdata) {
       console.log("jo", swimdata);
       x.domain(d3.extent(swimdata, function(d) { return d.Datum; }));
-      y.domain([0, d3.max(swimdata, function(d) { return (d.Temp+2); })]);
+      y.domain([10, d3.max(swimdata, function(d) { return (d.Temp+2); })]);
 
       // Add the valueline path.
       svg.append("path")
