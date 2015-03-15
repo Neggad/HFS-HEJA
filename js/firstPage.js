@@ -17,6 +17,7 @@ $( "#searchButton" ).click(function() {
       theMap(names[result]);
       document.getElementById("startView").style.display = "none";
       document.getElementById("mapView").style.display = "inherit";
+      document.getElementById("mapView1").style.display = "inherit";
       document.getElementById("popupInfo").style.display = "inherit";
   }
 });

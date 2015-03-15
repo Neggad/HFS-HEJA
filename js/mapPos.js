@@ -82,7 +82,7 @@ function callback(response, status) {
       google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
           console.log(badplatsArray[j]["Badplats"]);
-          popupInfo.updateWeather(badplatsArray[j]["Latitud"]["Longitud"]);
+          popupInfo.updateWeather(badplatsArray[j]["Latitud"], badplatsArray[j]["Longitud"]);
           document.getElementById("popupInfo").style.display = "inherit";
           document.getElementById("badTitel").innerHTML = badplatsArray[j]["Badplats"];
         }
