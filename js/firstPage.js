@@ -16,7 +16,8 @@ $( "#searchButton" ).click(function() {
   	console.log("Till kartan");
       theMap(names[result]);
       document.getElementById("startView").style.display = "none";
-  document.getElementById("mapView").style.display = "inherit";
+      document.getElementById("mapView").style.display = "inherit";
+      document.getElementById("popupInfo").style.display = "inherit";
   }
 });
 

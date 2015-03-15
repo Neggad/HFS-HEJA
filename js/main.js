@@ -16,4 +16,3 @@ $(document).keypress(function(e) {
 
 var popupInfo = new popupInfo();
 var data = new data();
-var tempgraph = new tempgraph();

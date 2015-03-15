@@ -1,7 +1,7 @@
 function tempgraph(){
 	var divId = $("#temp_graph");
   // Set the dimensions of the canvas / graph
-  var margin = {top: 30, right: 20, bottom: 30, left: 50},
+  var margin = {top: 10, right: 10, bottom: 20, left: 40},
       width = divId.width() - margin.left - margin.right,
       height = divId.height() - margin.top - margin.bottom;
 
@@ -14,15 +14,15 @@ function tempgraph(){
 
   // Define the axes
   var xAxis = d3.svg.axis().scale(x)
-      .orient("bottom").ticks(2);
+      .orient("bottom").ticks(5);
 
   var yAxis = d3.svg.axis().scale(y)
       .orient("left").ticks(4);
 
   // Define the line
   var valueline = d3.svg.line()
-      .x(function(d) { return x(d.Datum); })
-      .y(function(d) { return y(d.Temp); });
+      .x(function(d) { return x(d.time); })
+      .y(function(d) { return y(d.temp); });
       
   // Adds the svg canvas
   var svg = d3.select("#temp_graph")
@@ -33,10 +33,11 @@ function tempgraph(){
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var swimplace = [];
-  var check = data.getTempsOfBath("Lillsjöbadet");
-  console.log("hej", check)
+  var weatherData = popupInfo.getTemperatureData();
+  console.log("hej", weatherData)
+  draw(weatherData);
   // Get the data
-  d3.csv("data/baddata.csv", function(error, data) {
+/*  d3.csv("data/baddata.csv", function(error, data) {
       data.forEach(function(d) {
           if(d.Badplats == "Lillsjöbadet"){            
               d.Vattentemp = parseFloat(d.Vattentemp.slice(2));
@@ -47,19 +48,24 @@ function tempgraph(){
 
       // Scale the range of the data
       draw(swimplace);
-  });
+  });*/
 
-  function draw(swimdata) {
-      console.log("jo", swimdata);
-      x.domain(d3.extent(swimdata, function(d) { return d.Datum; }));
-      y.domain([10, d3.max(swimdata, function(d) { return (d.Temp+2); })]);
+  function draw(weatherdata) {
+      x.domain(d3.extent(weatherdata, function(d) { return d.time; }));
+      y.domain([d3.min(weatherdata, function(d) { return d.temp; }), d3.max(weatherdata, function(d) { return d.temp; })]);
 
       // Add the valueline path.
       svg.append("path")
           .attr("class", "line")
-          .attr("d", valueline(swimdata));
+          .attr("d", valueline(weatherdata));
           //.attr("d", valueline(swimdata));
-
+    
+    svg.append("text")      // text label for the x axis
+        .attr("x", width/2 )
+        .attr("y",  margin.top+height )
+        .style("text-anchor", "middle")
+        .text("Tidsaxel...");
+    
       // Add the X Axis
       svg.append("g")
           .attr("class", "x axis")
