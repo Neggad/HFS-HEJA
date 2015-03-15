@@ -1,11 +1,11 @@
 function tempgraph(){
-	// Set the dimensions of the canvas / graph
+	var divId = $("#temp_graph");
+  // Set the dimensions of the canvas / graph
   var margin = {top: 30, right: 20, bottom: 30, left: 50},
-      width = 600 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+      width = divId.width() - margin.left - margin.right,
+      height = divId.height() - margin.top - margin.bottom;
 
   // Parse the date / time
-  //var parseDate = d3.time.format("%y-%m-%d").parse;
   var parseDate = d3.time.format("%Y-%m-%d").parse;
 
   // Set the ranges
@@ -25,7 +25,7 @@ function tempgraph(){
       .y(function(d) { return y(d.Temp); });
       
   // Adds the svg canvas
-  var svg = d3.select("body")
+  var svg = d3.select("#temp_graph")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -33,10 +33,12 @@ function tempgraph(){
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var swimplace = [];
+  var check = data.getTempsOfBath("Lillsjöbadet");
+  console.log("hej", check)
   // Get the data
   d3.csv("data/baddata.csv", function(error, data) {
       data.forEach(function(d) {
-          if(d.Badplats == "Lillsj�badet"){            
+          if(d.Badplats == "Lillsjöbadet"){            
               d.Vattentemp = parseFloat(d.Vattentemp.slice(2));
               d.Provtid = parseDate(d.Provtid);
               swimplace.push({Datum: d.Provtid, Temp: d.Vattentemp});
