@@ -146,10 +146,12 @@
                     <hr>
                     <!-- Graph and weather-->
                     <div class="row">
-                        <!-- Graph-->
+                        <!-- Weather Temperature Graph-->
                         <div class="col-xs-8 borderZ" id="temp_graph" style="height:15vh;"></div>
-                        <!-- Weather-->
-                        <div class="col-xs-4 borderZ" style="height:15vh;"></div>
+                        <!-- Water Temperature-->
+                        <div class="col-xs-4 borderZ" id="water_temp" style="height:15vh;">
+
+                        </div>
                     </div>
                     <hr>
                     <div class="row">
@@ -233,5 +235,12 @@
         <!-- js for the whole application -->
         <script src="js/main.js"></script>
 
+
+        <script> 
+            var temp = data.getTempsOfBath("Lillsjön"); 
+            console.log("Tjenna Lillsjön", temp);
+
+            document.getElementById("water_temp").innerHTML = "<div style='font-size:20px; text-align: center; vertical-align: middle;' >18° </div>";
+        </script>
     </body>
 </html>
