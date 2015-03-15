@@ -12,6 +12,32 @@ function data() {
 
 	});
 
+	this.getLatLong = function(city) {
+		var lng, lat;
+		var output = [];
+
+		for(i in data) {
+
+			if(data[i]["Kommun"] == city) {
+				output.push({Latitud: data[i]["Lat"], Longitud: data[i]["Long"]});
+			}
+		}
+
+	}
+
+	this.getLatLongName = function(city) {
+		var lng, lat;
+		var output = [];
+
+		for(i in data) {
+
+			if(data[i]["Kommun"] == city) {
+				output.push({Badplats: data[i]["Badplats"], Latitud: data[i]["Lat"], Longitud: data[i]["Long"]});
+			}
+		}
+
+	}
+	
 	function createBathIDs() {
 		//console.log("IN FUNCTION createBathIDs()");
 		
