@@ -23,10 +23,9 @@ d3.csv("data/LongLat_test.csv",function (csv) {
       });
   });
 
-//var anna = data.getLatLongOfAllBaths();
-//console.log("TEST: ", anna);
 
 initialize();
+
  
 function initialize() {
   var opts = {
@@ -58,6 +57,12 @@ function callback(response, status) {
     var destinations = response.destinationAddresses;
 
     deleteOverlays();
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+      //avstånd till alla mål från origo
+      console.log(results[i].distance.text);
+    }
 
     //Origin marker
     marker = new google.maps.Marker({

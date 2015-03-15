@@ -3,6 +3,7 @@ function data() {
 
 	//var file = "data/testdata.csv";
 	//var file = "data/baddata.csv";
+
 	var file = "data/nrkp.csv";
 	var data;
 
@@ -12,6 +13,32 @@ function data() {
 		createBathIDs();
 
 	});
+
+	this.getLatLong = function(city) {
+		var lng, lat;
+		var output = [];
+
+		for(i in data) {
+
+			if(data[i]["Kommun"] == city) {
+				output.push({Latitud: data[i]["Lat"], Longitud: data[i]["Long"]});
+			}
+		}
+
+	}
+
+	this.getLatLongName = function(city) {
+		var lng, lat;
+		var output = [];
+
+		for(i in data) {
+
+			if(data[i]["Kommun"] == city) {
+				output.push({Badplats: data[i]["Badplats"], Latitud: data[i]["Lat"], Longitud: data[i]["Long"]});
+			}
+		}
+
+	}
 
 	function createBathIDs() {
 		//console.log("IN FUNCTION createBathIDs()");
