@@ -78,6 +78,16 @@ function callback(response, status) {
         map: map,
         icon: destinationIcon
       });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, j) {
+        return function() {
+          console.log(badplatsArray[j]["Badplats"]);
+          popupInfo.updateWeather(badplatsArray[j]["Latitud"]["Longitud"]);
+          document.getElementById("popupInfo").style.display = "inherit";
+          document.getElementById("badTitel").innerHTML = badplatsArray[j]["Badplats"];
+        }
+      })(marker, j));
+
     }            
   }
 }
